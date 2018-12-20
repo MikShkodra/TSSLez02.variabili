@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+
 <html>
     <head>
         <title>calcolatrice</title>
@@ -11,9 +6,96 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div id="header">testata</div>
-        <div id="content">
-            
+        <div id="header">testata
+            <div id="totale">0</div><br/>
+        </div><br/>
+        <div id="content"> 
+            <input id="in_num1"/><br/><br/>
+            <input id="in_num2"/><br/><br/>
+            <button id="bt_somma" onclick="somma()">+</button>
+            <button id="bt_sott" onclick="sottrazione()">-</button>
+            <button id="bt_molt" onclick="moltiplicazione()">x</button>
+            <button id="bt_divis "onclick="divisione()">/</button>
+            <br/><br/>
+            <div id="div_ris">0</div><br/>
+            <br/>
         </div>
+       
+        <div id="footer">pìé di pagina</div>
     </body>
 </html>
+
+<script>
+
+    var num1;
+    var num2;
+    var risultato;
+    var totale=0;
+    
+    function faeInput() {
+        num1 = document.getElementById("in_num1").value;  
+        num2 = document.getElementById("in_num2").value;
+            //ATTENZIONE è ancora testo
+        num1 = parseFloat(num1);
+        num2 = parseFloat(num2);
+        risultato= num1 + num2;
+        totale= totale + risultato;
+    }
+
+    function faeOutput() {
+            
+    }
+    
+    function somma() {
+        faseInput();    
+        
+        
+        document.getElementById("div_ris").innerHTML=risultato;
+        document.getElementById("totale").innerHTML=totale;
+        
+    }
+
+    function sottrazione() {
+        num1 = document.getElementById("in_num1").value;  
+        num2 = document.getElementById("in_num2").value;
+        
+        //ATTENZIONE è ancora testo
+        num1 = parseFloat(num1);
+        num2 = parseFloat(num2);
+        risultato= num1 - num2;
+        totale= totale + risultato;
+        
+        document.getElementById("div_ris").innerHTML=risultato;
+        document.getElementById("totale").innerHTML=totale;
+    }
+
+    function moltiplicazione() {
+        num1 = document.getElementById("in_num1").value;  
+        num2 = document.getElementById("in_num2").value;
+        
+        //ATTENZIONE è ancora testo
+        num1 = parseFloat(num1);
+        num2 = parseFloat(num2);
+        risultato= num1 * num2;
+        totale= totale + risultato;
+        
+        document.getElementById("div_ris").innerHTML=risultato;
+        document.getElementById("totale").innerHTML=totale;
+    }
+
+    function divisione() {
+        num1 = document.getElementById("in_num1").value;  
+        num2 = document.getElementById("in_num2").value;
+        
+        //ATTENZIONE è ancora testo
+        num1 = parseFloat(num1);
+        num2 = parseFloat(num2);
+        risultato= num1 / num2;
+        totale= totale + risultato;
+        
+        document.getElementById("div_ris").innerHTML=risultato;
+        document.getElementById("totale").innerHTML=totale;
+      
+    }   
+   
+</script>
